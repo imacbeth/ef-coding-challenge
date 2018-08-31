@@ -1,5 +1,5 @@
 
-# E Fundamentals Coding Challenge Create a Word cloud 
+# E Fundamentals Coding Challenge - Create a Word cloud 
 
 # Introduction: 
 
