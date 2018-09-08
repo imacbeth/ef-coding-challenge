@@ -24,6 +24,13 @@ describe('WordCounter', function() {
     assert.deepStrictEqual(actual, expected);
   })
 
+  it('should be able to create a sorted array of word objects with frequency counts', function () {
+    wordArray = wordCounter.createArrayOfWords(exampleReview);
+    wordsMap = wordCounter.createWordMap(wordArray);
 
+    const expected = [ { "word":"excellent", "total":1}, {"word":"product", "total":1}, {"word":"good", "total":1}, {"word":"value", "total":1} ]
+    const sortedWordArray = wordCounter.sortByFrequency(wordsMap);
+    assert.deepStrictEqual(sortedWordArray, expected);
+  })
 
 });

@@ -23,10 +23,10 @@ WordCounter.prototype.createWordMap = function (wordsArray) {
 
 
 WordCounter.prototype.sortByFrequency = function (wordsMap) {
-  const finalWordsArray = [];
+  let finalWordsArray = [];
   finalWordsArray = Object.keys(wordsMap).map(function(key) {
     return {
-      name: key,
+      word: key,
       total: wordsMap[key]
     };
   });
