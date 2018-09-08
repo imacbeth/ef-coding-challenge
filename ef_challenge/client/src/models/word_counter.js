@@ -1,9 +1,9 @@
-const WordCounter = function(text) {
-  this.text = text;
+const WordCounter = function() {
+
 };
 
 WordCounter.prototype.createArrayOfWords = function (text) {
-  const wordsArray = text.split(/\s+/);
+  const wordsArray = text.replace(/[^A-Za-z0-9 ]/g, '').split(/\s+/);
   return wordsArray;
 };
 
