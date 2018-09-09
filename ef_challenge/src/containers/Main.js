@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import reviewsArray from '../reviews.json';
 import WordTable from '../components/WordTable.js';
+import FreqWordCloud from '../components/FreqWordCloud.js';
 import NavBar from '../components/NavBar.js';
 const WordCounter = require('../models/word_counter.js');
 
@@ -50,7 +51,13 @@ class Main extends React.Component {
       <Router>
             <React.Fragment>
               <NavBar />
-              <WordTable wordFrequencyArray={this.state.finalWordsArray}/>
+              <Route
+            path="/word-table"
+            render={() => (<WordTable wordFrequencyArray={this.state.finalWordsArray}/>)}/>
+            <Route
+          path="/word-cloud"
+          render={() => (<FreqWordCloud wordFrequencyArray={this.state.finalWordsArray}/>)}/>
+
     </React.Fragment>
     </Router>
     );
