@@ -22,28 +22,26 @@ class Main extends React.Component {
 
   componentDidMount(){
     this.getWordsArray();
-    console.log(this.getWordsArray());
-    // this.getWordsMap();
-    // this.getFinalWordsArray();
   }
 
   getWordsArray(){
     const wordCounter = new WordCounter();
     let wordArray = wordCounter.createArrayOfWords(this.state.reviews);
-    this.setState({ wordsArray: wordArray }) ;
-
+    this.setState({ wordsArray: wordArray });
+    this.getWordsMap(wordArray)
   }
 
-  getWordsMap(){
+  getWordsMap(wordArray){
     const wordCounter = new WordCounter();
-    let wordsMap = wordCounter.createWordMap(this.state.wordsArray);
-    this.setState({ wordsMap: wordsMap }) ;
+    let wordsMap = wordCounter.createWordMap(wordArray);
+    this.setState({ wordsMap: wordsMap });
+    this.getFinalWordsArray(wordsMap);
   }
 
-  getFinalWordsArray(){
+  getFinalWordsArray(wordsMap){
     const wordCounter = new WordCounter();
-      let finalArray = wordCounter.sortByFrequency(this.state.wordsMap);
-      this.setState({ finalWordsArray: finalArray }) ;
+    let finalArray = wordCounter.sortByFrequency(wordsMap);
+    this.setState({ finalWordsArray: finalArray }) ;
     }
 
   render(){
@@ -52,7 +50,7 @@ class Main extends React.Component {
       <Router>
             <React.Fragment>
               <NavBar />
-              {/* <WordTable wordFrequencyArray={this.state.finalWordsArray}/> */}
+              <WordTable wordFrequencyArray={this.state.finalWordsArray}/>
     </React.Fragment>
     </Router>
     );

@@ -8,12 +8,12 @@ WordCounter.prototype.createArrayOfWords = function (reviewsArray) {
     arrayofWords.push(reviewsArray[i].replace(/[^A-Za-z0-9\s]/g,"").toLowerCase().split(/\s+/))
   }
 
-  return flattenedWordsArray = arrayofWords.reduce(
+  const flattenedWordsArray = arrayofWords.reduce(
     function(accumulator, currentValue) {
       return accumulator.concat(currentValue);
   },
   []);
-
+  return flattenedWordsArray;
 };
 
 WordCounter.prototype.createWordMap = function (wordsArray) {
