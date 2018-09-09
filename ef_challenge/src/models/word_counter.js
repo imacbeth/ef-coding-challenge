@@ -2,9 +2,18 @@ const WordCounter = function() {
 
 };
 
-WordCounter.prototype.createArrayOfWords = function (text) {
-  const wordsArray = text.replace(/[^A-Za-z0-9 ]/g, '').split(/\s+/);
-  return wordsArray;
+WordCounter.prototype.createArrayOfWords = function (reviewsArray) {
+  let arrayofWords = []
+  for(let i=0; i< reviewsArray.length; i++){
+    arrayofWords.push(reviewsArray[i].replace(/[^A-Za-z0-9\s]/g,"").toLowerCase().split(/\s+/))
+  }
+
+  return flattenedWordsArray = arrayofWords.reduce(
+    function(accumulator, currentValue) {
+      return accumulator.concat(currentValue);
+  },
+  []);
+
 };
 
 WordCounter.prototype.createWordMap = function (wordsArray) {
