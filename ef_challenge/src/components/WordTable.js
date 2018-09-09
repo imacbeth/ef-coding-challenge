@@ -15,7 +15,7 @@ const WordTable = function (props) {
     })
 
     return(
-      <div>
+      <div className="word-table">
         <h2>Word Frequency Table</h2>
         <table>
           <tbody>

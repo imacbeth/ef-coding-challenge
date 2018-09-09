@@ -50,7 +50,7 @@ class Main extends React.Component {
       <Router>
             <React.Fragment>
               <NavBar />
-              <WordTable className="word-table" wordFrequencyArray={this.state.finalWordsArray}/>
+              <WordTable wordFrequencyArray={this.state.finalWordsArray}/>
     </React.Fragment>
     </Router>
     );
