@@ -19,7 +19,7 @@ const WordTable = function (props) {
         <h2>Word Frequency Table</h2>
         <table>
           <tbody>
-          <tr>
+          <tr className="table-headings">
             <td>Position</td>
             <td>Word</td>
             <td>Number of times used</td>

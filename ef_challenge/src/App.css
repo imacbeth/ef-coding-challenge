@@ -7,5 +7,23 @@
   justify-content: space-around;
   margin: 0 auto;
   display: table;
+}
+.word-cloud-container {
+  align-content: center;
+  justify-content: space-around;
+}
 
+tr.table-headings {
+  font-weight: bold;
+}
+ul {
+  list-style-type: none;
+  justify-content: space-around;
+  align-content: center;
+  display: flex;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: #ac6bba;
 }
