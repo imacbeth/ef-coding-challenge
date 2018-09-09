@@ -4,6 +4,7 @@ const WordCounter = function() {
 
 WordCounter.prototype.createArrayOfWords = function (reviewsArray) {
   let arrayofWords = []
+  // using regex to remove punctuation and split at white spaces
   for(let i=0; i< reviewsArray.length; i++){
     arrayofWords.push(reviewsArray[i].replace(/[^A-Za-z0-9\s]/g,"").toLowerCase().split(/\s+/))
   }

@@ -11,6 +11,7 @@
 .word-cloud-container {
   align-content: center;
   justify-content: space-around;
+  padding: 10px;
 }
 
 tr.table-headings {
