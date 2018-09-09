@@ -8,12 +8,18 @@ const FreqWordCloud = function (props) {
     {text: word.word, value: word.total})
   });
 
+  const fontSizeMapper = word => Math.log2(word.value) * 55;
+
   return(
     <div>
-      
+      <WordCloud
+        data={data}
+        fontSizeMapper={fontSizeMapper}
+        font="Helvetica"
+      />
     </div>
   )
-  console.log(data);
+
 }
 
 export default FreqWordCloud;
